@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VedSaathi Herbal - GB Stone Kit Quick Order (Cash On Delivery)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="lang-dual">
+
+  <div class="app-viewport-container">
+    
+    <!-- Compact Brand Header with 2-Minute Timer & Language Switcher -->
+    <header class="compact-header">
+      <div class="brand-left">
+        <span class="brand-icon">🌿</span>
+        <div class="brand-titles">
+          <strong>VEDSAATHI HERBAL</strong>
+          <small>GALLBLADDER & LIVER WELLNESS</small>
+        </div>
+      </div>
+
+      <!-- 2-Minute Urgency Timer -->
+      <div class="compact-timer-badge">
+        <span class="fire-icon">🔥</span>
+        <span class="timer-label" data-en="Offer ends:" data-hi="ऑफर समाप्त:">Offer ends:</span>
+        <strong id="timerDisplay">02:00</strong>
+      </div>
+
+      <!-- Language Switcher -->
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="dual" onclick="setLanguage('dual')">हिं/EN</button>
+        <button class="lang-btn" data-lang="hi" onclick="setLanguage('hi')">हिन्दी</button>
+        <button class="lang-btn" data-lang="en" onclick="setLanguage('en')">EN</button>
+      </div>
+    </header>
+
+    <!-- Main Order Form Card -->
+    <main class="single-frame-card">
+
+      <!-- Doctor Guidance & Privacy Banner -->
+      <div class="doctor-contact-banner">
+        <div class="doctor-line">
+          <span class="doctor-icon">👨‍⚕️</span>
+          <strong data-en="Ayurvedic Doctor Consultation Included" data-hi="विशेषज्ञ आयुर्वेदिक डॉक्टर द्वारा निशुल्क परामर्श">
+            Ayurvedic Doctor Consultation Included
+          </strong>
+        </div>
+        <div class="privacy-line">
+          <span class="lock-icon">🔒</span>
+          <span data-en="Aapka data 100% safe aur confidential rahega." data-hi="आपका डेटा 100% सुरक्षित और गोपनीय रहेगा।">
+            Aapka data 100% safe aur confidential rahega.
+          </span>
+        </div>
+      </div>
+
+      <!-- 3 Key Reference Pills -->
+      <div class="ref-pills-row">
+        <span class="ref-pill pill-ayurvedic">
+          <span class="pill-dot">🌿</span>
+          <span data-en="100% Ayurvedic" data-hi="100% आयुर्वेदिक">100% Ayurvedic</span>
+        </span>
+        <span class="ref-pill pill-safety">
+          <span class="pill-dot">🛡️</span>
+          <span data-en="GMP Certified & Lab Tested" data-hi="जीएमपी प्रमाणित">GMP Certified & Lab Tested</span>
+        </span>
+        <span class="ref-pill pill-cod">
+          <span class="pill-dot">🚚</span>
+          <span data-en="Cash On Delivery" data-hi="कैश ऑन डिलीवरी">Cash On Delivery</span>
+        </span>
+      </div>
+
+      <!-- Compact Product Showcase & Zooming Price Box -->
+      <div class="product-price-compact-bar">
+        <div class="product-mini-thumb">
+          <img src="images/GB STONE KIT.png" alt="VedSaathi Herbal GB Stone Kit" class="thumb-img">
+        </div>
+
+        <div class="product-mini-info">
+          <div class="product-title-row">
+            <div>
+              <h1 class="product-name" data-en="GB Stone Kit (3-in-1 Combo)" data-hi="जी.बी. स्टोन किट (3-in-1 कॉम्बो)">GB Stone Kit (3-in-1 Combo)</h1>
+              <p class="product-subtag" data-en="Capsule (30) + Syrup (200ml) + Gas Go Churan (100g)" data-hi="कैप्सूल (30) + सिरप (200ml) + गैस गो चूर्ण (100g)">Capsule (30) + Syrup (200ml) + Gas Go Churan (100g)</p>
+            </div>
+            <span class="delivery-all-india">🇮🇳 <span data-en="All India Delivery" data-hi="पूरे भारत में डिलीवरी">All India Delivery</span></span>
+          </div>
+
+          <!-- Pulsing Zoom-in Zoom-out Price Highlight -->
+          <div class="price-action-row">
+            <div class="price-wrapper">
+              <del class="mrp-old" id="mrpOldDisplay">₹2,500</del>
+              <div class="price-pulse-target">
+                <span class="curr-sign">₹</span>
+                <span class="price-val" id="priceValDisplay">2,250</span>
+              </div>
+            </div>
+            <div class="save-tag-badge" id="saveBadgeDisplay">
+              <span data-en="SAVE ₹250 (10% OFF)" data-hi="₹250 छूट (10% OFF)">SAVE ₹250 (10% OFF)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kit Course Package Selector -->
+      <div class="kit-pack-selector">
+        <span class="pack-selector-label" data-en="Select Treatment Course:" data-hi="उपचार कोर्स चुनें:">Select Treatment Course:</span>
+        <div class="pack-options-grid">
+          <button type="button" class="pack-opt-card active" data-pack="1" data-price="2250" data-mrp="2500" data-save="SAVE ₹250 (10% OFF)" data-save-hi="₹250 छूट (10% OFF)" onclick="selectPack(1)">
+            <span class="pack-badge-rec" data-en="Trial" data-hi="शुरुआती">Trial</span>
+            <strong class="pack-title" data-en="1 Kit (1 Month)" data-hi="1 किट (1 महीना)">1 Kit (1 Month)</strong>
+            <span class="pack-price-num">₹2,250</span>
+          </button>
+          
+          <button type="button" class="pack-opt-card popular" data-pack="2" data-price="4050" data-mrp="5000" data-save="SAVE ₹950 (19% OFF)" data-save-hi="₹950 छूट (19% OFF)" onclick="selectPack(2)">
+            <span class="pack-badge-rec popular-badge" data-en="Best Seller ⭐" data-hi="सबसे लोकप्रिय ⭐">Best Seller ⭐</span>
+            <strong class="pack-title" data-en="2 Kits (2 Months)" data-hi="2 किट (2 महीने)">2 Kits (2 Months)</strong>
+            <span class="pack-price-num">₹4,050</span>
+          </button>
+
+          <button type="button" class="pack-opt-card" data-pack="3" data-price="5400" data-mrp="7500" data-save="SAVE ₹2,100 (28% OFF)" data-save-hi="₹2,100 छूट (28% OFF)" onclick="selectPack(3)">
+            <span class="pack-badge-rec" data-en="Best Value" data-hi="अधिक बचत">Best Value</span>
+            <strong class="pack-title" data-en="3 Kits (Complete)" data-hi="3 किट (पूरा कोर्स)">3 Kits (Complete)</strong>
+            <span class="pack-price-num">₹5,400</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Moving Bouncing Pointer Arrow -->
+      <div class="compact-pointer-bar">
+        <span class="bouncing-arrow-dot">↓</span>
+        <span class="pointer-text" data-en="Fill 4 quick details to place Cash On Delivery order" data-hi="कैश ऑन डिलीवरी आर्डर के लिए नीचे 4 आसान जानकारी भरें">
+          Fill 4 quick details to place Cash On Delivery order
+        </span>
+        <span class="bouncing-arrow-dot">↓</span>
+      </div>
+
+      <!-- Compact Single-Screen Form -->
+      <form id="compactOrderForm" class="compact-form" novalidate>
+        
+        <!-- Field 1 & 2 in Grid -->
+        <div class="form-grid-row">
+          
+          <!-- Name Field -->
+          <div class="input-cell" id="cell-name">
+            <label for="fullName">
+              <span class="label-en">Full Name</span>
+              <span class="label-hi">/ पूरा नाम</span>
+              <span class="req">*</span>
+            </label>
+            <div class="field-box">
+              <span class="input-icon">👤</span>
+              <input type="text" id="fullName" name="fullName" placeholder="Enter Full Name" required autocomplete="name">
+              <span class="valid-mark">✓</span>
+            </div>
+            <small class="error-msg" data-en="Enter full name" data-hi="पूरा नाम दर्ज करें"></small>
+          </div>
+
+          <!-- Mobile Number Field -->
+          <div class="input-cell" id="cell-phone">
+            <label for="phoneNumber">
+              <span class="label-en">Mobile Number</span>
+              <span class="label-hi">/ मोबाइल नंबर</span>
+              <span class="req">*</span>
+            </label>
+            <div class="field-box phone-box">
+              <span class="ind-prefix">🇮🇳 +91</span>
+              <input type="tel" id="phoneNumber" name="phoneNumber" maxlength="10" placeholder="10-digit number" required autocomplete="tel">
+              <span class="valid-mark">✓</span>
+            </div>
+            <small class="error-msg" data-en="Enter valid 10-digit number" data-hi="10 अंकों का नंबर डालें"></small>
+          </div>
+
+        </div>
+
+        <div class="form-grid-row">
+          
+          <!-- Pincode Field -->
+          <div class="input-cell" id="cell-pincode">
+            <label for="pincode">
+              <span class="label-en">Pincode</span>
+              <span class="label-hi">/ पिन कोड</span>
+              <span class="req">*</span>
+            </label>
+            <div class="field-box">
+              <span class="input-icon">📍</span>
+              <input type="tel" id="pincode" name="pincode" maxlength="6" placeholder="6-digit PIN" required autocomplete="postal-code">
+              <span class="valid-mark">✓</span>
+            </div>
+            <small class="error-msg" data-en="Enter 6-digit pincode" data-hi="6 अंकों का पिन कोड डालें"></small>
+          </div>
+
+          <!-- Complete Address Field -->
+          <div class="input-cell input-cell-address" id="cell-address">
+            <label for="fullAddress">
+              <span class="label-en">Delivery Address</span>
+              <span class="label-hi">/ पूरा पता</span>
+              <span class="req">*</span>
+            </label>
+            <div class="field-box">
+              <span class="input-icon">🏠</span>
+              <input type="text" id="fullAddress" name="fullAddress" placeholder="House no, Street, Area" required autocomplete="street-address">
+              <span class="valid-mark">✓</span>
+            </div>
+            <small class="error-msg" data-en="Enter delivery address" data-hi="पूरा पता लिखें"></small>
+          </div>
+
+        </div>
+
+        <!-- COD Status Pill -->
+        <div class="cod-status-strip">
+          <div class="cod-left">
+            <span class="cod-bullet">✓</span>
+            <strong data-en="Cash On Delivery (COD) - Free Express Delivery" data-hi="कैश ऑन डिलीवरी (COD) - फ्री एक्सप्रेस डिलीवरी">Cash On Delivery (COD) - Free Express Delivery</strong>
+          </div>
+          <span class="all-india-tag" data-en="Discreet Safe Box" data-hi="सुरक्षित पार्सल">Discreet Safe Box</span>
+        </div>
+
+        <!-- Submit Button with Pulsing Glow -->
+        <button type="submit" class="compact-order-btn" id="submitBtn">
+          <div class="btn-shine-bar"></div>
+          <div class="btn-inner-content">
+            <span class="btn-main-title" data-en="BOOK CASH ON DELIVERY ORDER →" data-hi="कैश ऑन डिलीवरी आर्डर बुक करें →">
+              BOOK CASH ON DELIVERY ORDER →
+            </span>
+            <span class="btn-sub-detail">
+              <span data-en="Pay at Delivery: " data-hi="डिलीवरी पर देय: ">Pay at Delivery: </span>
+              <strong id="btnPayAmount">₹2,250</strong> | <span data-en="Pay when parcel arrives" data-hi="पार्सल मिलने पर पैसे दें">Pay when parcel arrives</span>
+            </span>
+          </div>
+        </button>
+
+      </form>
+
+      <!-- Key Benefits Highlights Bar -->
+      <div class="benefits-compact-grid">
+        <div class="benefit-item">
+          <span class="b-icon">🍃</span>
+          <div>
+            <strong data-en="Gallbladder Support" data-hi="पित्त की थैली स्वास्थ्य">Gallbladder Support</strong>
+            <p data-en="Helps maintain smooth bile flow & relieves heaviness" data-hi="पित्त बहाव को सुगम बनाए व भारीपन दूर करे">Helps maintain smooth bile flow</p>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <span class="b-icon">🫀</span>
+          <div>
+            <strong data-en="Liver Detox & Cleansing" data-hi="लिवर डिटॉक्स व सफाई">Liver Detox & Cleansing</strong>
+            <p data-en="Optimizes liver metabolism & toxin flush" data-hi="लिवर की कार्यक्षमता सुधारे व टॉक्सिन निकाले">Optimizes liver metabolism</p>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <span class="b-icon">✨</span>
+          <div>
+            <strong data-en="Fast Gas & Acidity Relief" data-hi="गैस व एसिडिटी से तुरंत राहत">Fast Gas & Acidity Relief</strong>
+            <p data-en="Gas Go Plus prevents severe bloating & constipation" data-hi="गैस गो प्लस पेट फूलना व कब्ज रोके">Gas Go Plus prevents bloating</p>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- Customer Lifestyle Photo & Genuine Reviews Section -->
+    <section class="customer-proof-section">
+      
+      <!-- Customer Holding Product Showcase Card -->
+      <div class="lifestyle-photo-card">
+        <div class="photo-img-wrap">
+          <img src="images/Gemini_Generated_Image_6udttq6udttq6udt.webp" alt="Happy Customer with VedSaathi Herbal GB Stone Kit" class="lifestyle-img" loading="lazy">
+          <span class="verified-photo-badge">✓ 100% Real Customer</span>
+        </div>
+        <div class="lifestyle-quote-box">
+          <div class="lifestyle-badge-row">
+            <span class="trust-pill">🌿 3-in-1 Kit Regular User</span>
+            <span class="stars-gold">★★★★★</span>
+          </div>
+          <p class="quote-text" data-en="“I had persistent upper right abdominal heaviness and bloating for months. Taking VedSaathi GB Stone Kit (Capsule, Syrup & Gas Go Churan) daily brought immense relief in just 3-4 weeks. Digestion improved and my follow-up reports showed great wellness!”" data-hi="“मुझे पिछले कई महीनों से पेट के ऊपरी हिस्से में भारीपन और गैस की समस्या रहती थी। वेदसाथी जीबी स्टोन किट (कैप्सूल, सिरप और गैस गो चूर्ण) नियमित लेने से 3-4 हफ्तों में ही बहुत आराम मिला। पाचन बिल्कुल ठीक हो गया!”">
+            “I had persistent upper right abdominal heaviness and bloating for months. Taking VedSaathi GB Stone Kit (Capsule, Syrup & Gas Go Churan) daily brought immense relief in just 3-4 weeks. Digestion improved and my follow-up reports showed great wellness!”
+          </p>
+          <div class="author-meta">
+            <strong>Ramesh Meena, 42 yrs</strong>
+            <span>Verified Customer • Jaipur</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Genuine Customer Reviews List -->
+      <div class="reviews-header-bar">
+        <span class="reviews-title-tag" data-en="VERIFIED CUSTOMER REVIEWS" data-hi="सत्यापित ग्राहकों के अनुभव">VERIFIED CUSTOMER REVIEWS</span>
+        <div class="rating-overall">
+          <span class="rating-score">4.8/5</span>
+          <span class="stars-gold">★★★★★</span>
+          <span class="total-reviews">(14,200+ Kits Delivered)</span>
+        </div>
+      </div>
+
+      <div class="reviews-cards-list">
+        
+        <!-- Review 1 -->
+        <div class="single-review-card">
+          <div class="review-top">
+            <div class="reviewer-badge-info">
+              <span class="avatar-circle">RM</span>
+              <div>
+                <strong class="reviewer-name">Rajesh Kumar Mishra</strong>
+                <span class="reviewer-city">Lucknow, Uttar Pradesh</span>
+              </div>
+            </div>
+            <span class="verified-purchase-pill">✓ Verified Purchase</span>
+          </div>
+          <div class="stars-gold">★★★★★</div>
+          <p class="review-comment" data-en="Ordered Cash On Delivery and received it sealed within 3 days. The combination of GB-Stone Biolive syrup, capsules and Gas Go churan works wonders. The doctor also phoned to guide proper warm water and diet intake." data-hi="कैश ऑन डिलीवरी से 3 दिन में सुरक्षित पार्सल मिला। जीबी-स्टोन बायोलिव सिरप, कैप्सूल और गैस गो चूर्ण का कॉम्बो बहुत असरदार है। डॉक्टर ने भी कॉल करके हल्के गर्म पानी और सही डाइट के साथ लेने का तरीका समझाया।">
+            Ordered Cash On Delivery and received it sealed within 3 days. The combination of GB-Stone Biolive syrup, capsules and Gas Go churan works wonders. The doctor also phoned to guide proper warm water and diet intake.
+          </p>
+          <span class="review-date">Reviewed 2 days ago</span>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="single-review-card">
+          <div class="review-top">
+            <div class="reviewer-badge-info">
+              <span class="avatar-circle">SS</span>
+              <div>
+                <strong class="reviewer-name">Satish Sharma</strong>
+                <span class="reviewer-city">New Delhi</span>
+              </div>
+            </div>
+            <span class="verified-purchase-pill">✓ Verified Purchase</span>
+          </div>
+          <div class="stars-gold">★★★★★</div>
+          <p class="review-comment" data-en="Severe acidity and right side stomach discomfort used to trouble me every night. After completing 1 month pack, my digestion is so peaceful. Completely herbal with zero side effects. Just ordered the 2-kit course!" data-hi="हर रात गंभीर एसिडिटी और पेट में बेचैनी रहती थी। 1 महीने का कोर्स पूरा करने के बाद पाचन बहुत हल्का और शांत हो गया। 100% आयुर्वेदिक है, कोई साइड इफ़ेक्ट नहीं हुआ। मैंने अभी 2 किट का अगला पैक भी आर्डर किया!">
+            Severe acidity and right side stomach discomfort used to trouble me every night. After completing 1 month pack, my digestion is so peaceful. Completely herbal with zero side effects. Just ordered the 2-kit course!
+          </p>
+          <span class="review-date">Reviewed 5 days ago</span>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="single-review-card">
+          <div class="review-top">
+            <div class="reviewer-badge-info">
+              <span class="avatar-circle">AD</span>
+              <div>
+                <strong class="reviewer-name">Anil Deshmukh</strong>
+                <span class="reviewer-city">Nagpur, Maharashtra</span>
+              </div>
+            </div>
+            <span class="verified-purchase-pill">✓ Verified Purchase</span>
+          </div>
+          <div class="stars-gold">★★★★★</div>
+          <p class="review-comment" data-en="Great authentic Ayurvedic quality. The Gas Go Plus churan relieves bloating immediately, while the capsules and syrup keep bile flow smooth and digestion active. Truly worth every rupee!" data-hi="शुद्ध आयुर्वेदिक गुणवत्ता है। गैस गो प्लस चूर्ण तुरंत गैस और पेट फूलने में राहत देता है, और कैप्सूल व सिरप पाचन को सही रखते हैं। पैसे पूरी तरह वसूल हैं!">
+            Great authentic Ayurvedic quality. The Gas Go Plus churan relieves bloating immediately, while the capsules and syrup keep bile flow smooth and digestion active. Truly worth every rupee!
+          </p>
+          <span class="review-date">Reviewed 1 week ago</span>
+        </div>
+
+        <!-- Review 4 -->
+        <div class="single-review-card">
+          <div class="review-top">
+            <div class="reviewer-badge-info">
+              <span class="avatar-circle">VK</span>
+              <div>
+                <strong class="reviewer-name">Vikas Patel</strong>
+                <span class="reviewer-city">Ahmedabad, Gujarat</span>
+              </div>
+            </div>
+            <span class="verified-purchase-pill">✓ Verified Purchase</span>
+          </div>
+          <div class="stars-gold">★★★★★</div>
+          <p class="review-comment" data-en="100% genuine Ayurvedic medicine. Very fast COD delivery and customer service is always available. Highly recommend anyone dealing with gallbladder heaviness or digestive troubles." data-hi="100% असली आयुर्वेदिक दवा। बहुत तेज कैश ऑन डिलीवरी और सपोर्ट टीम हमेशा मदद करती है। पित्ताशय के भारीपन और पेट की समस्याओं के लिए सबसे बेहतरीन किट।">
+            100% genuine Ayurvedic medicine. Very fast COD delivery and customer service is always available. Highly recommend anyone dealing with gallbladder heaviness or digestive troubles.
+          </p>
+          <span class="review-date">Reviewed 2 weeks ago</span>
+        </div>
+
+      </div>
+
+      <!-- Quick Scroll to Top Order Button -->
+      <div class="bottom-order-trigger">
+        <button class="scroll-up-order-btn" onclick="scrollToTopForm()">
+          <span id="bottomBtnText" data-en="↑ ORDER NOW (CASH ON DELIVERY - ₹2,250)" data-hi="↑ अभी आर्डर करें (कैश ऑन डिलीवरी - ₹2,250)">
+            ↑ ORDER NOW (CASH ON DELIVERY - ₹2,250)
+          </span>
+        </button>
+      </div>
+
+    </section>
+
+    <footer class="app-footer">
+      <p>© 2026 VedSaathi Herbal. 100% Ayurvedic Care • Expert Doctor Guidance • Free COD Delivery</p>
+      <small style="opacity: 0.7; font-size: 0.65rem; display: block; margin-top: 4px;">*Disclaimer: Ayurvedic wellness support products. Individual results may vary.</small>
+    </footer>
+
+  </div>
+
+  <!-- Order Success / Thank You Modal Popup -->
+  <div class="success-modal-overlay" id="orderSuccessModal">
+    <div class="success-dialog-card">
+      <button class="modal-close" onclick="closeSuccessModal()" title="Close">✕</button>
+      
+      <div class="success-check-badge">
+        <div class="check-ring-pulse"></div>
+        <span class="check-symbol">✓</span>
+      </div>
+      
+      <h3 class="modal-h3" data-en="Your Order is Registered! 🎉" data-hi="आपका आर्डर बुक हो गया है! 🎉">
+        Your Order is Registered! 🎉
+      </h3>
+      <p class="modal-desc" data-en="Thank you for choosing VedSaathi Herbal. Our Ayurvedic team will contact you shortly to confirm your delivery and explain the dosage routine." data-hi="वेदसाथी हर्बल चुनने के लिए धन्यवाद। हमारे आयुर्वेदिक विशेषज्ञ जल्द ही डिलीवरी कन्फर्म करने और खुराक समझाने के लिए आपसे संपर्क करेंगे।">
+        Thank you for choosing VedSaathi Herbal. Our Ayurvedic team will contact you shortly to confirm your delivery and explain the dosage routine.
+      </p>
+
+      <div class="modal-receipt">
+        <div class="rec-line">
+          <span class="rec-label" data-en="Order ID:" data-hi="आर्डर नंबर:">Order ID:</span>
+          <strong class="rec-id-val" id="receiptOrderId">#VS-89104</strong>
+        </div>
+        <div class="rec-line">
+          <span class="rec-label" data-en="Product:" data-hi="प्रोडक्ट:">Product:</span>
+          <span id="receiptProduct">VedSaathi GB Stone Kit (1 Month Course)</span>
+        </div>
+        <div class="rec-line">
+          <span class="rec-label" data-en="Customer:" data-hi="ग्राहक का नाम:">Customer:</span>
+          <strong id="receiptName">-</strong>
+        </div>
+        <div class="rec-line">
+          <span class="rec-label" data-en="Mobile:" data-hi="मोबाइल नंबर:">Mobile:</span>
+          <strong id="receiptPhone">-</strong>
+        </div>
+        <div class="rec-line">
+          <span class="rec-label" data-en="Delivery Address:" data-hi="डिलीवरी पता:">Delivery Address:</span>
+          <span id="receiptAddress">-</span>
+        </div>
+        <div class="rec-line rec-total">
+          <span data-en="Amount Payable at Delivery:" data-hi="डिलीवरी पर देय राशि:">Amount Payable at Delivery:</span>
+          <strong class="rec-amount" id="receiptAmount">₹2,250 (COD)</strong>
+        </div>
+      </div>
+
+      <div class="modal-btn-stack">
+        <button class="modal-ok-btn" onclick="closeSuccessModal()">
+          <span data-en="Done" data-hi="हो गया">Done</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

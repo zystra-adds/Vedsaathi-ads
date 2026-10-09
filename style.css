@@ -1,0 +1,1305 @@
+/* ==========================================================
+   VEDSAATHI HERBAL - GB STONE KIT HIGH CONVERTING TEMPLATE
+   ========================================================== */
+
+:root {
+  /* VedSaathi Ayurvedic Theme Colors */
+  --ayur-green-dark: #0b4b2e;
+  --ayur-green-main: #137547;
+  --ayur-green-mid: #1b8a56;
+  --ayur-green-light: #22c55e;
+  --ayur-green-tint: #ecfdf5;
+  --ayur-green-subtle: #f0fdf4;
+  --ayur-green-border: #a7f3d0;
+  
+  --ayur-amber-gold: #d97706;
+  --ayur-amber-dark: #92400e;
+  --ayur-amber-light: #f59e0b;
+  --ayur-amber-bg: #fffbeb;
+
+  --bg-gradient: radial-gradient(circle at 50% 8%, #eefbf3 0%, #f7fdf9 45%, #e9f7ee 100%);
+  --card-bg: #ffffff;
+  --text-dark: #12281e;
+  --text-muted: #4b6357;
+  --border-light: #d1fae5;
+  --border-strong: #86efac;
+
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-hindi: 'Noto Sans Devanagari', 'Outfit', sans-serif;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+  --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg-gradient);
+  color: var(--text-dark);
+  min-height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 12px 10px 40px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Language Filter Rules */
+body.lang-en [data-hi] { display: none !important; }
+body.lang-hi [data-en] { display: none !important; }
+body.lang-dual .label-en { display: inline; }
+body.lang-dual .label-hi { display: inline; color: var(--text-muted); font-size: 0.85em; font-family: var(--font-hindi); }
+
+.app-viewport-container {
+  width: 100%;
+  max-width: 540px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ==========================================================
+   COMPACT HEADER WITH 2-MIN TIMER & LANGUAGE TOGGLE
+   ========================================================== */
+.compact-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(8px);
+  padding: 8px 14px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-light);
+  box-shadow: 0 4px 14px rgba(11, 75, 46, 0.08);
+  position: sticky;
+  top: 6px;
+  z-index: 50;
+}
+
+.brand-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.brand-icon {
+  font-size: 1.25rem;
+}
+
+.brand-titles strong {
+  display: block;
+  font-size: 0.86rem;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  color: var(--ayur-green-dark);
+  line-height: 1.1;
+}
+
+.brand-titles small {
+  display: block;
+  font-size: 0.58rem;
+  font-weight: 700;
+  color: var(--ayur-amber-gold);
+  letter-spacing: 0.5px;
+}
+
+.compact-timer-badge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: linear-gradient(135deg, #0b4b2e 0%, #137547 100%);
+  color: #ffffff;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.72rem;
+  box-shadow: 0 2px 8px rgba(11, 75, 46, 0.25);
+}
+
+.compact-timer-badge strong {
+  color: #fef08a;
+  font-family: monospace;
+  font-size: 0.88rem;
+}
+
+.lang-switcher {
+  display: flex;
+  gap: 2px;
+  background: var(--ayur-green-tint);
+  padding: 2px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-light);
+}
+
+.lang-btn {
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  padding: 4px 8px;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.lang-btn.active {
+  background: var(--ayur-green-main);
+  color: #ffffff;
+  box-shadow: 0 1px 5px rgba(19, 117, 71, 0.35);
+}
+
+/* ==========================================================
+   MAIN ORDER FORM CARD
+   ========================================================== */
+.single-frame-card {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  border: 1.5px solid var(--border-strong);
+  box-shadow: 0 10px 30px rgba(11, 75, 46, 0.09);
+  overflow: hidden;
+  position: relative;
+}
+
+/* 1. DOCTOR CONTACT & PRIVACY BANNER */
+.doctor-contact-banner {
+  background: linear-gradient(180deg, #f0fdf4 0%, #dcfce7 100%);
+  padding: 9px 14px;
+  border-bottom: 1px solid #bbf7d0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.doctor-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: var(--ayur-green-dark);
+  font-size: 0.84rem;
+  font-weight: 800;
+}
+
+.doctor-icon {
+  font-size: 0.95rem;
+}
+
+.privacy-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  color: #375a48;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.lock-icon {
+  font-size: 0.75rem;
+}
+
+/* 2. 3 REFERENCE PILLS */
+.ref-pills-row {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: #ffffff;
+  border-bottom: 1px solid var(--border-light);
+  flex-wrap: wrap;
+}
+
+.ref-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.72rem;
+  font-weight: 700;
+  border: 1px solid transparent;
+}
+
+.pill-ayurvedic {
+  background: #ecfdf5;
+  color: #065f46;
+  border-color: #a7f3d0;
+}
+
+.pill-safety {
+  background: #fefce8;
+  color: #854d0e;
+  border-color: #fef08a;
+}
+
+.pill-cod {
+  background: #f0fdfa;
+  color: #115e59;
+  border-color: #99f6e4;
+}
+
+/* 3. PRODUCT SHOWCASE & ZOOMING PRICE BAR */
+.product-price-compact-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  background: linear-gradient(135deg, #f7fdf9 0%, #ffffff 100%);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.product-mini-thumb {
+  width: 95px;
+  height: 105px;
+  background: radial-gradient(circle at 50% 50%, #ffffff 50%, #ecfdf5 100%);
+  border: 1.5px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(11, 75, 46, 0.12);
+}
+
+.thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(11, 75, 46, 0.16));
+  transition: transform 0.3s ease;
+}
+
+.product-mini-thumb:hover .thumb-img {
+  transform: scale(1.05);
+}
+
+.product-mini-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.product-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.product-name {
+  font-family: var(--font-heading);
+  font-size: 1.08rem;
+  font-weight: 800;
+  color: var(--ayur-green-dark);
+  line-height: 1.2;
+}
+
+.product-subtag {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-top: 1px;
+}
+
+.delivery-all-india {
+  background: #ecfdf5;
+  color: var(--ayur-green-dark);
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-strong);
+  white-space: nowrap;
+}
+
+/* CONTINUOUS ZOOM-IN ZOOM-OUT PRICE PULSE */
+.price-action-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f0fdf4;
+  border: 1px dashed var(--ayur-green-main);
+  border-radius: var(--radius-sm);
+  padding: 5px 8px;
+  margin-top: 3px;
+}
+
+.price-wrapper {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.mrp-old {
+  color: #7b9487;
+  font-size: 0.78rem;
+  text-decoration: line-through;
+}
+
+.price-pulse-target {
+  display: flex;
+  align-items: baseline;
+  color: var(--ayur-green-dark);
+  font-weight: 900;
+  transform-origin: left center;
+  animation: priceZoomPulse 2s ease-in-out infinite;
+}
+
+@keyframes priceZoomPulse {
+  0% { transform: scale(1); color: var(--ayur-green-dark); }
+  50% { transform: scale(1.12); color: #047857; text-shadow: 0 0 10px rgba(5, 150, 105, 0.35); }
+  100% { transform: scale(1); color: var(--ayur-green-dark); }
+}
+
+.curr-sign {
+  font-size: 0.9rem;
+  color: var(--ayur-green-main);
+}
+
+.price-val {
+  font-size: 1.35rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.save-tag-badge {
+  background: var(--ayur-amber-gold);
+  color: #ffffff;
+  font-size: 0.64rem;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  box-shadow: 0 2px 6px rgba(217, 119, 6, 0.25);
+}
+
+/* ==========================================================
+   PACKAGE SELECTOR GRID
+   ========================================================== */
+.kit-pack-selector {
+  padding: 8px 14px 10px;
+  background: #ffffff;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.pack-selector-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--ayur-green-dark);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.pack-options-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.pack-opt-card {
+  background: #fbfdfb;
+  border: 1.5px solid #d1fae5;
+  border-radius: var(--radius-md);
+  padding: 7px 6px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2px;
+  position: relative;
+  transition: var(--transition);
+}
+
+.pack-opt-card:hover {
+  border-color: var(--ayur-green-mid);
+  transform: translateY(-1px);
+}
+
+.pack-opt-card.active {
+  background: #f0fdf4;
+  border-color: var(--ayur-green-main);
+  box-shadow: 0 4px 12px rgba(19, 117, 71, 0.18);
+}
+
+.pack-badge-rec {
+  font-size: 0.58rem;
+  font-weight: 800;
+  color: var(--text-muted);
+  background: #e2e8f0;
+  padding: 1px 6px;
+  border-radius: var(--radius-full);
+}
+
+.pack-opt-card.popular .pack-badge-rec {
+  background: linear-gradient(135deg, #d97706, #f59e0b);
+  color: #ffffff;
+}
+
+.pack-title {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  line-height: 1.1;
+  margin-top: 1px;
+}
+
+.pack-price-num {
+  font-size: 0.88rem;
+  font-weight: 900;
+  color: var(--ayur-green-dark);
+}
+
+/* 4. MOVING BOUNCING POINTER ARROW */
+.compact-pointer-bar {
+  background: #f0fdf4;
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-bottom: 1px dashed var(--border-strong);
+}
+
+.pointer-text {
+  font-size: 0.74rem;
+  font-weight: 800;
+  color: var(--ayur-green-dark);
+}
+
+.bouncing-arrow-dot {
+  width: 18px;
+  height: 18px;
+  background: var(--ayur-green-main);
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 900;
+  animation: bounceDown 1.3s infinite ease-in-out;
+}
+
+@keyframes bounceDown {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(3px); }
+}
+
+/* ==========================================================
+   ORDER FORM
+   ========================================================== */
+.compact-form {
+  padding: 12px 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-grid-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.input-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.input-cell label {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.req {
+  color: #dc2626;
+  font-weight: 700;
+}
+
+.field-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 9px;
+  font-size: 0.85rem;
+  pointer-events: none;
+  opacity: 0.65;
+}
+
+.field-box input {
+  width: 100%;
+  font-family: inherit;
+  font-size: 0.85rem;
+  padding: 9px 28px 9px 30px;
+  border: 1.2px solid #cbd5e1;
+  border-radius: var(--radius-sm);
+  background: #ffffff;
+  color: var(--text-dark);
+  outline: none;
+  transition: var(--transition);
+}
+
+.field-box input:focus {
+  border-color: var(--ayur-green-main);
+  background: #fffcfd;
+  box-shadow: 0 0 0 3px rgba(19, 117, 71, 0.15);
+}
+
+.phone-box input {
+  padding-left: 64px;
+}
+
+.ind-prefix {
+  position: absolute;
+  left: 8px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  border-right: 1px solid #cbd5e1;
+  padding-right: 5px;
+  display: flex;
+  align-items: center;
+  height: 20px;
+}
+
+.valid-mark {
+  position: absolute;
+  right: 9px;
+  color: #15803d;
+  font-weight: 800;
+  font-size: 0.85rem;
+  display: none;
+}
+
+.input-cell.valid .valid-mark {
+  display: block;
+}
+
+.input-cell.valid input {
+  border-color: #86efac;
+}
+
+.input-cell.has-error input {
+  border-color: #ef4444;
+  background: #fff5f5;
+}
+
+.error-msg {
+  font-size: 0.65rem;
+  color: #ef4444;
+  font-weight: 600;
+  display: none;
+}
+
+.input-cell.has-error .error-msg {
+  display: block;
+}
+
+/* COD Status Strip */
+.cod-status-strip {
+  background: #f0fdf4;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  padding: 7px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cod-left {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cod-bullet {
+  width: 15px;
+  height: 15px;
+  background: var(--ayur-green-main);
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6rem;
+  font-weight: 900;
+}
+
+.cod-left strong {
+  font-size: 0.75rem;
+  color: var(--ayur-green-dark);
+}
+
+.all-india-tag {
+  background: var(--ayur-amber-gold);
+  color: #ffffff;
+  font-size: 0.62rem;
+  font-weight: 800;
+  padding: 3px 7px;
+  border-radius: 4px;
+}
+
+/* COMPACT SUBMIT BUTTON */
+.compact-order-btn {
+  background: linear-gradient(135deg, #0b4b2e 0%, #137547 50%, #065f46 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(11, 75, 46, 0.4);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  margin-top: 4px;
+}
+
+.compact-order-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(11, 75, 46, 0.55);
+}
+
+.compact-order-btn:active {
+  transform: scale(0.98);
+  box-shadow: 0 2px 10px rgba(11, 75, 46, 0.3);
+}
+
+.compact-order-btn.loading {
+  pointer-events: none;
+  opacity: 0.9;
+  background: #0b4b2e;
+}
+
+.btn-shine-bar {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  transform: skewX(-25deg);
+  animation: shineLoop 3s infinite;
+}
+
+@keyframes shineLoop {
+  0% { left: -100%; }
+  40%, 100% { left: 150%; }
+}
+
+.btn-inner-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.btn-main-title {
+  font-size: 0.95rem;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+}
+
+.btn-sub-detail {
+  font-size: 0.72rem;
+  opacity: 0.95;
+}
+
+.btn-sub-detail strong {
+  color: #fef08a;
+}
+
+/* Benefits Highlights Grid */
+.benefits-compact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  padding: 10px 12px;
+  background: #f7fdf9;
+  border-top: 1px solid var(--border-light);
+}
+
+.benefit-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.b-icon {
+  font-size: 1rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.benefit-item strong {
+  display: block;
+  font-size: 0.68rem;
+  color: var(--ayur-green-dark);
+  line-height: 1.1;
+}
+
+.benefit-item p {
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  line-height: 1.25;
+  margin-top: 2px;
+}
+
+/* ==========================================================
+   CUSTOMER LIFESTYLE PHOTO & REVIEWS SECTION
+   ========================================================== */
+.customer-proof-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+/* Lifestyle Photo Card */
+.lifestyle-photo-card {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  border: 1.5px solid var(--border-strong);
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(11, 75, 46, 0.08);
+  width: 100%;
+}
+
+.photo-img-wrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #ecfdf5;
+  display: block;
+}
+
+.lifestyle-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center 20%;
+  display: block;
+}
+
+.verified-photo-badge {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(6px);
+  color: #065f46;
+  font-size: 0.78rem;
+  font-weight: 800;
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);
+  border: 1px solid #86efac;
+}
+
+.lifestyle-quote-box {
+  padding: 12px 16px;
+  background: #f7fdf9;
+  border-top: 1px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.lifestyle-badge-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.trust-pill {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #065f46;
+  background: #ecfdf5;
+  padding: 2px 7px;
+  border-radius: var(--radius-full);
+  border: 1px solid #a7f3d0;
+}
+
+.stars-gold {
+  color: #f59e0b;
+  font-size: 0.95rem;
+  letter-spacing: 2px;
+}
+
+.quote-text {
+  font-size: 0.82rem;
+  color: var(--text-dark);
+  font-style: italic;
+  line-height: 1.45;
+}
+
+.author-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 0.74rem;
+  margin-top: 4px;
+  color: var(--text-muted);
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.author-meta strong {
+  color: var(--ayur-green-dark);
+}
+
+/* Reviews Header */
+.reviews-header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  border: 1px solid var(--border-light);
+  flex-wrap: wrap;
+  gap: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.reviews-title-tag {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--ayur-green-dark);
+  letter-spacing: 0.5px;
+}
+
+.rating-overall {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.rating-score {
+  font-weight: 900;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+}
+
+.total-reviews {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+/* Reviews List */
+.reviews-cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.single-review-card {
+  background: #ffffff;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.review-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.reviewer-badge-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.avatar-circle {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #0b4b2e 0%, #137547 100%);
+  color: #ffffff;
+  font-weight: 800;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+}
+
+.reviewer-name {
+  display: block;
+  font-size: 0.84rem;
+  color: var(--text-dark);
+  line-height: 1.1;
+}
+
+.reviewer-city {
+  display: block;
+  font-size: 0.68rem;
+  color: var(--text-muted);
+}
+
+.verified-purchase-pill {
+  background: #ecfdf5;
+  color: #065f46;
+  font-size: 0.62rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.review-comment {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+  margin-top: 2px;
+}
+
+.review-date {
+  font-size: 0.66rem;
+  color: #94a3b8;
+}
+
+/* Scroll Up Order Button */
+.bottom-order-trigger {
+  margin: 6px 0;
+}
+
+.scroll-up-order-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #0b4b2e 0%, #137547 100%);
+  color: #ffffff;
+  border: none;
+  padding: 12px;
+  border-radius: var(--radius-md);
+  font-weight: 800;
+  font-size: 0.88rem;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(11, 75, 46, 0.35);
+  transition: var(--transition);
+}
+
+.scroll-up-order-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(11, 75, 46, 0.45);
+}
+
+.app-footer {
+  text-align: center;
+  padding: 10px 0 20px 0;
+  font-size: 0.74rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================================
+   SUCCESS MODAL POPUP
+   ========================================================= */
+.success-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+}
+
+.success-modal-overlay.active {
+  display: flex;
+}
+
+.success-dialog-card {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  max-width: 420px;
+  width: 100%;
+  padding: 22px 18px;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25);
+  animation: popScale 0.25s ease;
+}
+
+@keyframes popScale {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #f1f5f9;
+  border: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.success-check-badge {
+  position: relative;
+  width: 58px;
+  height: 58px;
+  margin: 0 auto 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.check-ring-pulse {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #dcfce7;
+  animation: ringPulse 1.8s infinite ease-out;
+}
+
+@keyframes ringPulse {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.25); opacity: 0; }
+  100% { transform: scale(0.95); opacity: 0; }
+}
+
+.check-symbol {
+  position: relative;
+  z-index: 2;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #15803d 0%, #0b4b2e 100%);
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  font-weight: 900;
+  box-shadow: 0 4px 15px rgba(21, 128, 61, 0.35);
+}
+
+.modal-h3 {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  color: var(--ayur-green-dark);
+  line-height: 1.2;
+}
+
+.modal-desc {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+  line-height: 1.4;
+}
+
+.modal-receipt {
+  background: #f0fdf4;
+  border: 1.5px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  margin: 12px 0 10px 0;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.76rem;
+}
+
+.rec-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.rec-label {
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.rec-id-val {
+  color: var(--ayur-green-dark);
+  font-family: monospace;
+  font-size: 0.85rem;
+}
+
+.rec-line.rec-total {
+  border-top: 1px dashed var(--border-strong);
+  padding-top: 6px;
+  margin-top: 2px;
+  font-size: 0.86rem;
+}
+
+.rec-amount {
+  font-weight: 900;
+  color: var(--ayur-green-dark);
+  font-size: 1.05rem;
+}
+
+.team-contact-notice {
+  font-size: 0.72rem;
+  color: var(--ayur-green-dark);
+  font-weight: 700;
+  background: #ecfdf5;
+  padding: 7px 10px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 12px;
+  border: 1px solid var(--border-light);
+}
+
+.modal-btn-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.modal-wa-btn {
+  background: #25d366;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: var(--radius-sm);
+  font-weight: 800;
+  font-size: 0.86rem;
+  display: block;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+  transition: var(--transition);
+}
+
+.modal-wa-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
+}
+
+.modal-ok-btn {
+  background: var(--ayur-green);
+  border: none;
+  padding: 11px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: var(--transition);
+  width: 100%;
+}
+
+.modal-ok-btn:hover {
+  background: var(--ayur-green-dark);
+}
+
+/* ==========================================================
+   MOBILE VIEWPORT OPTIMIZATIONS
+   ========================================================== */
+@media (max-width: 480px) {
+  body {
+    padding: 8px 6px 36px;
+  }
+  .app-viewport-container {
+    gap: 10px;
+  }
+  .compact-header {
+    padding: 6px 10px;
+  }
+  .doctor-contact-banner {
+    padding: 7px 10px;
+  }
+  .ref-pills-row {
+    gap: 5px;
+    padding: 6px 8px;
+  }
+  .ref-pill {
+    font-size: 0.68rem;
+    padding: 3px 8px;
+  }
+  .product-price-compact-bar {
+    padding: 10px 10px;
+    gap: 10px;
+  }
+  .product-mini-thumb {
+    width: 80px;
+    height: 90px;
+  }
+  .product-name {
+    font-size: 0.98rem;
+  }
+  .price-val {
+    font-size: 1.22rem;
+  }
+  .pack-options-grid {
+    gap: 6px;
+  }
+  .pack-title {
+    font-size: 0.66rem;
+  }
+  .pack-price-num {
+    font-size: 0.82rem;
+  }
+  .form-grid-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .compact-form {
+    padding: 10px 10px 14px;
+    gap: 8px;
+  }
+  .field-box input {
+    padding: 8px 26px 8px 28px;
+    font-size: 0.82rem;
+  }
+  .phone-box input {
+    padding-left: 60px;
+  }
+  .compact-order-btn {
+    padding: 11px 12px;
+  }
+  .btn-main-title {
+    font-size: 0.88rem;
+  }
+  .benefits-compact-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
